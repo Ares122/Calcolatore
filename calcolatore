@@ -1,0 +1,355 @@
+
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+//variabili quadrato
+int a;
+float area_quadrato=0.0;
+
+// variabili triangolo
+int t1,t2,t3,th ;
+float area_triangolo=0.0;
+
+//variabili rettangolo
+int br,hr,brq,hrq;
+float diagonaler=0.0;
+
+//variabili rombo
+int dr1,dr2,drq1,drq2,l1,l2;
+float diagonalero;
+
+//variabili pentagono
+int lp;
+const float F=0.688;
+const float R=sqrt(5);
+float apotema;
+float perimetro;
+
+
+
+void main(){
+	printf("\n**** Calcolatore forme geometriche ****");
+	printf("\n Con questo programma possiamo svolgere operazioni su diversi tipi di figure geometriche  ");
+
+
+
+	printf("\n\n Seleziona tipo di figura : ");
+	int scelta ;
+
+
+do{
+	printf("\n 1 - QUADRATO ");
+	printf("\n 2 - TRIANGOLO ");
+	printf("\n 3 - RETTANGOLO ");
+	printf("\n 4 - ROMBO ");
+	printf("\n 5 - PENTAGONO ");
+	printf("\n 6 - EXIT ");
+
+
+	printf("\n\n Figura : ");
+	scanf("%d",&scelta);
+
+	switch(scelta){
+		case 1 :
+
+		    printf("\nHai selezionato il quadrato\n\n");
+
+		    for(int i=0;i<4;++i)
+                printf("* * * *\n");
+
+		printf("\n\n Inserisci lato del quadrato : ");
+		int l;
+		scanf("%d",&l);
+
+
+		int sc1;
+		do{
+
+		printf("\n\n Seleziona operazione ");
+		printf("\n 1 - AREA");
+		printf("\n 2 - PERIMETRO ");
+		printf("\n 3 - DIAGONALE ");
+		printf("\n 4 - EXIT  ");
+
+
+		printf("\n\n Operazione : ");
+		scanf("%d",&sc1);
+
+		switch(sc1){
+			case 1 :
+				printf("\n L'area del quadrato equivale a : %d ",l*l);
+				break;
+			case 2 :
+			    printf("\n Il perimetro equivale a : %d ",l*4);
+			    break;
+			case 3 :
+			    a=pow(l,2);
+				area_quadrato=sqrt(a+a);
+			    printf("\n La diagonale equivale a : %f ",area_quadrato);
+			    break;
+
+		}
+
+		}while(sc1!=4);
+		break;
+
+
+        case 2 :
+
+            printf("\nHai selezionato il triangolo\n\n");
+
+		    printf("   *\n");
+		    printf("  * *\n");
+		    printf(" * * *\n");
+		    printf("* * * * \n");
+
+
+
+            printf("\n Inserisci i lati del triangolo ");
+            printf("\n base : ");
+            scanf("%d",&t1);
+
+            printf("\n lato 2 : ");
+            scanf("%d",&t2);
+
+            printf("\n lato 3 : ");
+            scanf("%d",&t3);
+
+            printf("\n Inserisci l' altezza :  ");
+            scanf("%d",&th);
+
+            int sc2;
+            do{
+                printf("\n\n Seleziona operazione ");
+		        printf("\n 1 - AREA");
+                printf("\n 2 - PERIMETRO ");
+                printf("\n 3 - EXIT ");
+
+                printf("\n\n Operazione : ");
+		        scanf("%d",&sc2);
+
+                switch ( sc2){
+                     case 1 :
+                area_triangolo=(t1*th)/2.f;
+				printf("\n L'area del triangolo equivale a : %f ",area_triangolo);
+				break;
+			         case 2 :
+			    printf("\n Il perimetro equivale a : %d ",t1+t2+t3);
+			    break;
+
+
+                }
+
+
+
+
+
+
+            }while(sc2!=3);break;
+
+         case 3 :
+
+             printf("\nHai selezionato il rettangolo\n\n");
+
+		    for(int i=0;i<4;++i)
+                printf("* * * * * * * *\n");
+
+              	printf("\n Inserisci base del rettangolo : ");
+
+		        scanf("%d",&br);
+
+                printf("\n Inserisci altezza del rettangolo : ");
+                scanf("%d",&hr);
+
+
+
+		int sc3;
+		do{
+
+		printf("\n\n Seleziona operazione ");
+		printf("\n 1 - AREA");
+		printf("\n 2 - PERIMETRO ");
+		printf("\n 3 - DIAGONALE ");
+		printf("\n 4 - EXIT  ");
+
+
+		printf("\n\n Operazione : ");
+		scanf("%d",&sc3);
+
+		switch(sc3){
+			case 1 :
+				printf("\n L'area del rettangolo equivale a : %d ",br*hr);
+				break;
+			case 2 :
+			    printf("\n Il perimetro equivale a : %d ",(2*br)+(2*hr));
+			    break;
+			case 3 :
+			    brq=pow(br,2);
+			    hrq=pow(hr,2);
+				diagonaler=sqrt(brq+hrq);
+			    printf("\n La diagonale equivale a : %f ",diagonaler);
+			    break;
+
+		}
+
+		}while(sc3!=4);
+		break;
+
+        case 4 :
+
+            printf("\nHai selezionato il rombo\n\n");
+
+		    printf("   *\n");
+		    printf("  * *\n");
+		    printf(" * * *\n");
+		    printf("* * * * \n");
+		    printf(" * * *\n");
+		    printf("  * *\n");
+		    printf("   *\n");
+
+
+                 printf("\n Inserisci le diagonali del rombo ");
+            printf("\n diagonale maggiore : ");
+            scanf("%d",&dr1);
+
+            printf("\n diagonale minore : ");
+            scanf("%d",&dr2);
+
+
+
+            int sc4;
+            do{
+                printf("\n\n Seleziona operazione ");
+		        printf("\n 1 - AREA");
+                printf("\n 2 - PERIMETRO ");
+                printf("\n 3 - EXIT ");
+
+                printf("\n\n Operazione : ");
+		        scanf("%d",&sc4);
+
+                switch ( sc4){
+                     case 1 :
+				printf("\n L'area del rombo equivale  a : %f ",(dr1*dr2)/2.f);
+				break;
+			         case 2 :
+			             dr1/=2;
+			             drq1=pow(dr1,2);
+			             dr2/=2;
+			             drq2=pow(dr2,2);
+
+			             diagonalero=sqrt(drq1+drq2);
+
+
+
+
+
+			    printf("\n Il perimetro equivale a : %f ",diagonalero*4);
+
+
+
+
+			    break;
+
+
+                }
+
+
+
+
+
+
+            }while(sc4!=3);
+            break;
+
+
+
+
+
+
+
+
+            case 5 :
+
+
+                 printf("\nHai selezionato il pentagono\n\n");
+
+                 printf("     *\n");
+                 printf("   * * *\n");
+                 printf("* * * * * *\n");
+                 printf("  * * * *\n");
+                 printf("   * * *\n");
+
+
+
+
+
+                  	printf("\n Inserisci il lato del pentagono : ");
+
+		             scanf("%d",&lp);
+
+		             apotema=lp*F;
+
+
+
+
+
+
+
+		int sc5;
+		do{
+
+		printf("\n\n Seleziona operazione ");
+		printf("\n 1 - AREA");
+		printf("\n 2 - PERIMETRO ");
+		printf("\n 3 - DIAGONALE ");
+		printf("\n 4 - EXIT  ");
+
+
+		printf("\n\n Operazione : ");
+		scanf("%d",&sc5);
+
+		switch(sc5){
+			case 2 :
+
+				printf("\n Il perimetro equivale a : %d ",lp*5);
+				break;
+			case 1 :
+			    perimetro=lp*5;
+			    printf("\n L'area  equivale a : %f ",(perimetro*apotema)/2);
+			    break;
+			case 3 :
+
+			    printf("\n La diagonale equivale a : %f ",(lp*(R+1))/2);
+
+
+
+
+			    break;
+
+		}
+
+		}while(sc5!=4);break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+
+}while(scelta!=6);
+
+
+
+	}
+
